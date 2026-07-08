@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        .box{
+            border: 2px solid black;
+            height: 433px;
+            padding: 3px;
+            margin: 3px;
+            width:80vw
+            
+        }
+        .box1{
+            background-color: royalblue;
+            /* position: sticky;     
+            top: 0px;    
+            height: 111px;
+            width: 100%;  
+            margin: 0;
+            padding: 0; */
+            position: absolute;
+            top: 0px;
+            left: 3px;
+        }
+        .box2{
+            background-color: lightslategrey;
+            /* position: relative;
+            top: 34px;
+            left: 56px; */
+        }
+        .box3{
+            background-color: lightcoral;
+            /* position: fixed;
+            bottom: 0px;
+            left: 289px;
+            height: 210px;*/
+        } 
+        .box4{
+            background-color: lime;
+        }
+        .perent{
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid black;
+            /*Exception:  position: sticky; */
+            /* transform: translate(0); */
+            /* filter: invert(0); */
+            /* perspective: 0em; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="perent">
+
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+    </body>
+</html>
