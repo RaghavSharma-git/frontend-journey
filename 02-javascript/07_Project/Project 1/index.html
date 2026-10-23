@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .color1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid black;
+        }
+
+        .color2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: 2px solid black;
+        }
+        .color3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            border: 2px solid black;
+        }
+        .color4{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid black;
+        }
+        .color5{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Color Scheme Switcher</h1>
+    <div class="box">
+        <div class="color1"></div>
+        <div class="color2"></div>
+        <div class="color3"></div>
+        <div class="color4"></div>
+        <div class="color5"></div>
+
+    </div>
+    
+    
+    <h1 style="text-align: center;">Try clicking on one of the colour  above to change the background color of this page!</h1>
+</body>
+<script>
+    const buttons = document.querySelectorAll(`.box div`)
+    const body = document.querySelector(`body`)
+
+    buttons.forEach(function(box){
+        console.log(box);
+        box.addEventListener('click', function(e){
+            console.log(e);
+            console.log(e.target);
+            if(e.target.className === `color1`){
+            body.style.backgroundColor = "red";
+            } 
+            else if(e.target.className === `color2`){
+                body.style.backgroundColor = "blue";
+            }
+            else if(e.target.className === `color3`){
+                body.style.backgroundColor = "green";
+            }
+            else if(e.target.className === `color4`){
+                body.style.backgroundColor = "yellow";
+            }
+            else if(e.target.className === `color5`){
+                body.style.backgroundColor = "purple";
+
+    }})
+    });
+</script>
+</html>
