@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .button {
+            cursor: pointer;
+            padding: 8px 15px;
+        }
+
+        #results {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BMI Calculator</h1>
+
+    <form>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight"><br><br>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height"><br><br>
+
+        <button type="submit" class="button">
+            Calculate BMI
+        </button>
+
+        <div id="results"></div>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const height = parseInt(
+                document.querySelector('#height').value
+            );
+
+            const weight = parseInt(
+                document.querySelector('#weight').value
+            );
+
+            const results = document.querySelector('#results');
+
+            if (
+                height === '' ||
+                height < 0 ||
+                isNaN(height)
+            ) {
+                results.innerHTML =
+                    "Please enter a valid height";
+            }
+
+            else if (
+                weight === '' ||
+                weight < 0 ||
+                isNaN(weight)
+            ) {
+                results.innerHTML =
+                    "Please enter a valid weight";
+            }
+
+            else {
+                const bmi =
+                    (weight / ((height * height) / 10000))
+                    .toFixed(2);
+
+                results.innerHTML =
+                    `Your BMI is ${bmi}`;
+            }
+        });
+    </script>
+
+</body>
+</html>
